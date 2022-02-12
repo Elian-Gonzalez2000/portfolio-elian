@@ -476,7 +476,7 @@ ul {
 
 .about .container .skills {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-content: center;
   column-gap: 1rem;
@@ -485,7 +485,7 @@ ul {
 }
 
 .about .container .skills .skills-title {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .about .container .skills .skills-title h3 {
@@ -559,6 +559,26 @@ ul {
 
 .about .container .skills .skills-img.git {
   color: #f34f29;
+}
+
+.about .container .skills .skills-img.node {
+  color: #68A063;
+}
+
+.about .container .skills .skills-img.postgres  {
+  color: #336791;
+}
+
+.about .container .skills .skills-img.react  {
+  color: #61DBFB;
+}
+
+.about .container .skills .skills-img.redux  {
+  color: #764abc;
+}
+
+.about .container .skills .skills-img.figma  {
+  color: #e04a34;
 }
 
 /* ----- Services Section ----- */
@@ -1256,7 +1276,7 @@ ul {
   }
 
   .about .container .skills .skills-title {
-    grid-column: span 2;
+    grid-column: span 3;
   }
 
   .about .container .skills .skills-title h3 {
