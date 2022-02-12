@@ -1,64 +1,69 @@
 const d = document,
   w = window;
 
+function preloader() {
+  window.addEventListener("load", (e) => {
+    document.querySelector(".preloader").classList.add("opacity-visibility");
+  });
+}
 function hamburguerMenu(menu, menubtn, menuLink) {
-	d.addEventListener("click", (e) => {
-  	if (e.target.matches(menubtn) || e.target.matches(`${menubtn} *`)) {
-    	d.querySelector(menu).classList.toggle("is-active");
-    	d.querySelector(menubtn).classList.toggle("btn-effect");
-  	}
+  d.addEventListener("click", (e) => {
+    if (e.target.matches(menubtn) || e.target.matches(`${menubtn} *`)) {
+      d.querySelector(menu).classList.toggle("is-active");
+      d.querySelector(menubtn).classList.toggle("btn-effect");
+    }
 
-  	if (e.target.matches(menuLink)) {
-    	d.querySelector(menu).classList.remove("is-active");
-    	d.querySelector(menubtn).classList.remove("btn-effect");
-  	}
-	});
+    if (e.target.matches(menuLink)) {
+      d.querySelector(menu).classList.remove("is-active");
+      d.querySelector(menubtn).classList.remove("btn-effect");
+    }
+  });
 }
 
-function textoAnimado(id, objetivo){
-	const texto = d.getElementById(id),
-		disparador = d.getElementById(objetivo);
+function textoAnimado(id, objetivo) {
+  const texto = d.getElementById(id),
+    disparador = d.getElementById(objetivo);
 
-	let separarTexto = texto.textContent.split("");
-	//console.log(texto, separarTexto);
-	texto.textContent = "";
+  let separarTexto = texto.textContent.split("");
+  //console.log(texto, separarTexto);
+  texto.textContent = "";
 
-	separarTexto.forEach((letra)=>{
-		let caracter = letra === " "? '&nbsp;': letra;
+  separarTexto.forEach((letra) => {
+    let caracter = letra === " " ? "&nbsp;" : letra;
 
-		texto.innerHTML = texto.innerHTML +
-		`<div>
+    texto.innerHTML =
+      texto.innerHTML +
+      `<div>
 			<span>${caracter}</span>
 			<span class="second-child">${caracter}</span>
 		</div>`;
-	});
+  });
 
+  disparador.addEventListener("mouseover", (e) => {
+    let cuenta = 0;
+    const intervalo = setInterval(() => {
+      if (cuenta < texto.children.length) {
+        texto.children[cuenta].classList.add("animation");
+        cuenta += 1;
+        //console.log(texto.children);
+      } else {
+        clearInterval(intervalo);
+      }
+    }, 30);
+  });
 
-	disparador.addEventListener("mouseover",(e)=>{
-		let cuenta = 0;
-		const intervalo = setInterval(() => {
-				if(cuenta < texto.children.length){
-					texto.children[cuenta].classList.add('animation');
-					cuenta += 1;
-					//console.log(texto.children);
-				} else {
-					clearInterval(intervalo);
-				}
-			}, 30);
-	});
-
-	disparador.addEventListener("mouseout",(e)=>{
-		let cuenta = 0;
-		const intervalo = setInterval(() => {
-			if(cuenta < texto.children.length){
-				texto.children[cuenta].classList.remove('animation');
-				cuenta += 1;
-				//console.log(texto.children);
-			} else {
-				clearInterval(intervalo);
-			}
-		}, 30);
-	});
+  disparador.addEventListener("mouseout", (e) => {
+    let cuenta = 0;
+    const intervalo = setInterval(() => {
+      if (cuenta < texto.children.length) {
+        texto.children[cuenta].classList.remove("animation");
+        cuenta += 1;
+        //console.log(texto.children);
+      } else {
+        clearInterval(intervalo);
+      }
+    }, 30);
+  });
 }
 
 /* Scroll Spy para los enlaces del menu, colocar data-scroll-spy en los enlaces y secciones que se quieran vincular*/
@@ -122,7 +127,7 @@ function contactFormValidation() {
         return !regEx.exec($input.value)
           ? $input.nextElementSibling.classList.add("is-active")
           : $input.nextElementSibling.classList.remove("is-active");
-          console.log($input.nextElementSibling);
+        //console.log($input.nextElementSibling);
       }
 
       if (!pattern) {
@@ -137,13 +142,13 @@ function contactFormValidation() {
 
 /*Envio del formulario mediante AJAX y la API de FormSubmit*/
 
-function sendContactForm(){
+function sendContactForm() {
   document.addEventListener("submit", (e) => {
     e.preventDefault();
     const $gracias = document.getElementById("gracias"),
-     $errorResponse = document.getElementById("error"),
-     $formResponse = document.querySelector(".modal#gracias .modal-content"),
-     $formLoader = document.querySelector(".contact-form-loader");
+      $errorResponse = document.getElementById("error"),
+      $formResponse = document.querySelector(".modal#gracias .modal-content"),
+      $formLoader = document.querySelector(".contact-form-loader");
 
     $gracias.classList.remove("opacity-visibility");
     $formLoader.classList.remove("none");
@@ -181,10 +186,12 @@ function sendContactForm(){
   });
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
-	hamburguerMenu(".nav", ".menu-btn", ".nav ul li a");
-	textoAnimado("logo", "logotipo");
-	scrollSpy();
-	contactFormValidation();
-   sendContactForm();
+document.addEventListener("DOMContentLoaded", () => {
+  hamburguerMenu(".nav", ".menu-btn", ".nav ul li a");
+  textoAnimado("logo", "logotipo");
+  scrollSpy();
+  contactFormValidation();
+  sendContactForm();
 });
+
+preloader();
