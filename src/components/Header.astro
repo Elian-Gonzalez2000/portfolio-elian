@@ -1,0 +1,215 @@
+---
+
+---
+
+<header class="header">
+
+  <section class="container no-margin-bottom">
+     <div class="logo">
+        <h2>Elian Gonzalez</h2>
+     </div>
+
+     <div  class="menu-btn">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars"
+           class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 448 512">
+           <path fill="currentColor"
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+           </path>
+        </svg>
+     </div>
+     <nav class="nav">
+        <ul>
+           <li><a href="#home" data-scroll-spy>Inicio</a></li>
+           <li><a href="#about" data-scroll-spy>Acerca</a></li>
+           <li><a href="#services" data-scroll-spy>Servicios</a></li>
+           <li><a href="#projects" data-scroll-spy>Proyectos</a></li>
+           <li><a href="#contact" data-scroll-spy>Contacto</a></li>
+        </ul>
+     </nav>
+  </section>
+
+</header>
+
+ <script>
+  const d = document
+function hamburguerMenu(menu, menubtn, menuLink) {
+  d.addEventListener("click", (e) => {
+    if(e.target instanceof HTMLDivElement || e.target instanceof SVGElement){
+    if (e.target.matches(menubtn) || e.target.matches(`${menubtn} *`)) {
+      d.querySelector(menu).classList.toggle("is-active");
+      d.querySelector(menubtn).classList.toggle("btn-effect");
+    }
+
+    if (e.target.matches(menuLink)) {
+      d.querySelector(menu).classList.remove("is-active");
+      d.querySelector(menubtn).classList.remove("btn-effect");
+    }}
+  });
+}
+hamburguerMenu(".nav", ".menu-btn", ".nav ul li a")
+ </script>
+
+<style >
+	header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  background-color: var(--first-color);
+  z-index: 1000;
+}
+
+.menu-btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--gray-light-color);
+  color: var(--gray-light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.menu-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: 0.3s all ease;
+}
+
+.menu-btn.btn-effect {
+  color: var(--first-color);
+  background-color: var(--gray-light-color);
+  transform: rotate(90deg);
+}
+
+.menu-btn:hover {
+  color: var(--first-color);
+  background-color: var(--gray-light-color);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+header .container .logo {
+  width: 70%;
+}
+
+header .container .logo h2 {
+  color: var(--text-light-color);
+}
+
+@media screen and (min-width: 768px) {
+  /* ---- Header ---- */
+  .header {
+    position: sticky;
+    top: 0;
+    bottom: unset;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .header .container .logo {
+    width: 30%;
+  }
+
+  .header .container .logo h2 {
+    font-size: 2rem;
+    color: var(--text-light-color);
+  }
+}
+
+
+/* ---- Navigation Menu ----*/
+/* ---- Navigation Menu ----*/
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 4rem;
+  border-bottom: 2px solid var(--black-gray-color);
+  background-color: var(--first-alpha-color);
+  z-index: 999;
+  transition: 0.5s all ease;
+  transform: translateX(100vw);
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.nav ul li {
+  width: 100%;
+  text-align: center;
+}
+
+.nav ul li a {
+  display: inline-block;
+  color: var(--gray-light-color);
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.nav ul li a:hover {
+  opacity: 1;
+  color: var(--text-dark-color);
+  background-color: var(--gray-light-color);
+}
+
+.nav ul li a.active {
+  opacity: 1;
+  color: var(--text-dark-color);
+  background-color: var(--gray-light-color);
+}
+
+.nav.is-active {
+  transform: translateX(0);
+}
+
+/* ----- Containers ----- */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.container-large {
+  width: 100vw;
+  padding: 0 2rem;
+  margin: 20px auto;
+}
+
+/*---- Utilities ----*/
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+</style>          
