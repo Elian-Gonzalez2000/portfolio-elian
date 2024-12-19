@@ -1,8 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-		extend: {},
-	},
-	plugins: [],
-}
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    extend: {
+      colors: {
+        "first-color": "#1450d2",
+        "first-alpha-color": "rgba(20, 80, 210, 0.75)",
+        "second-color": "#0096c8",
+        "second-alpha-color": "rgba(0, 150, 200, 0.75)",
+        "third-color": "#e8d5b5",
+        "third-alpha-color": "rgba(232, 213, 181, 0.75)",
+        "four-color": "#00ad7e",
+        "four-alpha-color": "rgba(0, 173, 126, 0.75)",
+        "five-color": "#0078a8",
+        "five-alpha-color": "rgba(0, 120, 168, 0.75)",
+        "six-color": "#aba9bb",
+        "six-alpha-color": "rgba(171, 169, 187, 0.75)",
+        "white-color": "#fff",
+        "gray-light-color": "#f3f3f3",
+        "gray-color": "#ccc",
+        "gray-dark-color": "#666",
+        "black-gray-color": "#222",
+        "black-color": "#000",
+        "link-color": "#f6f6f6",
+        "title-color": "#333",
+        "text-dark-color": "#222",
+        "text-light-color": "#f3f3f3",
+        "white-alpha-color": "rgba(255, 255, 255, 0.5)",
+        "black-alpha-color": "rgba(0, 0, 0, 0.5)",
+        "background-light": "#f3f3f3",
+        "background-dark": "#111111",
+      },
+    },
+  },
+  plugins: [],
+};
