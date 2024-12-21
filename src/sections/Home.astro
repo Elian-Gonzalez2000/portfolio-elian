@@ -4,10 +4,10 @@
       <div class="profile-img mb-4 shadow-lg rounded-full">
         <img class="avatar w-48 h-48 rounded-full" src="https://i.ibb.co/vQjcTWc/foto-perfil.jpg" alt="Elian Gonzalez">
       </div>
-      <div class="hero-image-title text-white">
-        <p class="text-lg">¡Hola a Todos! Soy...</p>
-        <h1 id="logo" class="relative flex flex-wrap justify-center text-2xl font-light my-4 overflow-hidden">Elian Gonzalez</h1>
-        <p class="text-lg">Fullstack Developer!</p>
+      <div class="hero-image-title text-white mb-3 lg:mb-5">
+        <p class="text-lg md:text-xl lg:text-2xl">¡Hola a Todos! Soy...</p>
+        <h1 id="logo" class="relative flex flex-wrap justify-center text-2xl font-light my-4 overflow-hidden lg:my-5">Elian Gonzalez</h1>
+        <p class="text-lg md:text-xl lg:text-2xl">Fullstack Developer!</p>
       </div>
       <div class="home-btn mt-4">
         <a id="logotipo" href="#contact" class="bg-blue-500 hover:bg-gray-300 hover:text-black text-white font-medium py-2 px-4 rounded-lg transform hover:scale-110 transition">Contactame</a>
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let caracter = letra === " " ? "&nbsp;" : letra;
       texto.innerHTML += `
         <div>
-          <span>${caracter}</span>
-          <span class="second-child">${caracter}</span>
+          <span class="text-3xl md:text-3xl lg:text-4xl">${caracter}</span>
+          <span class="second-child text-3xl md:text-3xl lg:text-4xl">${caracter}</span>
         </div>`;
     });
 

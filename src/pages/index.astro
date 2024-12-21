@@ -8,7 +8,7 @@ import Home from '../sections/Home.astro';
 <Layout title="Welcome to Astro.">
 	<main>
 		<Header/>
-    <Home client:load/>
+    <Home/>
 	</main>
 </Layout>
 
@@ -151,5 +151,17 @@ ul {
 
 .hero-image-title h1#logo div.animation {
   transform: translateY(-2.1rem);
+}
+
+@media screen and (min-width: 1024px) {
+.hero-image-title h1#logo div span.second-child {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+}
+
+.hero-image-title h1#logo div.animation {
+  transform: translateY(-3rem);
+}
 }
 </style>
