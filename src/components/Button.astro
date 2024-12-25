@@ -1,2 +1,17 @@
 ---
+interface ButtonProps {
+  id: string | undefined;
+  href: string;
+  text: string | undefined;
+  classes: string | undefined;
+}
+
+const {id, href, text, classes } = Astro.props as ButtonProps;
 ---
+<!-- create a buttom component for astro -->
+
+<a id={id} href={href} class={`my-3 flex justify-center items-center w-4/5 py-2 bg-blue-500 text-white border-2 border-gray-800 rounded-md transition duration-300 hover:bg-gray-300 hover:text-black ${classes && classes}`}><slot/> {text && text}</a>
+
+<style>
+  
+  </style>
