@@ -1,23 +1,42 @@
 <section class="home max-h-screen w-full" id="home" data-scroll-spy>
-  <article class="hero-image bg-cover bg-center bg-fixed" style="background-image: url(https://i.ibb.co/1mWw1nT/hero-image-home.jpg);">
-    <aside class="hero-image-opacity flex flex-col items-center justify-center min-h-screen w-full bg-black bg-opacity-50 text-center">
+  <article
+    class="hero-image bg-cover bg-center bg-fixed"
+    style="background-image: url(https://i.ibb.co/1mWw1nT/hero-image-home.jpg);"
+  >
+    <aside
+      class="hero-image-opacity flex flex-col items-center justify-center min-h-screen w-full bg-black bg-opacity-50 text-center"
+    >
       <div class="profile-img mb-4 shadow-lg rounded-full">
-        <img class="avatar w-48 h-48 rounded-full" src="https://i.ibb.co/vQjcTWc/foto-perfil.jpg" alt="Elian Gonzalez">
+        <img
+          class="avatar w-48 h-48 rounded-full"
+          src="https://i.ibb.co/vQjcTWc/foto-perfil.jpg"
+          alt="Elian Gonzalez"
+        />
       </div>
       <div class="hero-image-title text-white mb-3 lg:mb-5">
         <p class="text-lg md:text-xl lg:text-2xl">¡Hola a Todos! Soy...</p>
-        <h1 id="logo" class="relative flex flex-wrap justify-center text-2xl font-light my-4 overflow-hidden lg:my-5">Elian Gonzalez</h1>
+        <h1
+          id="logo"
+          class="relative flex flex-wrap justify-center text-2xl font-light my-4 overflow-hidden lg:my-5"
+        >
+          Elian Gonzalez
+        </h1>
         <p class="text-lg md:text-xl lg:text-2xl">Fullstack Developer!</p>
       </div>
       <div class="home-btn mt-4">
-        <a id="logotipo" href="#contact" class="bg-blue-500 hover:bg-gray-300 hover:text-black text-white font-medium py-2 px-4 rounded-lg transform hover:scale-110 transition">Contactame</a>
+        <a
+          id="logotipo"
+          href="#contact"
+          class="bg-blue-500 hover:bg-gray-300 hover:text-black text-white font-medium py-2 px-4 rounded-lg md:text-lg lg:text-xl transform hover:scale-110 transition"
+          >Contactame</a
+        >
       </div>
     </aside>
   </article>
 </section>
 
 <style>
-/* ----- Texto Animado -----
+  /* ----- Texto Animado -----
 .hero-image-title h1#logo div {
   position: relative;
   transition: 0.5s all ease;
@@ -41,48 +60,48 @@
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  function textoAnimado(id, objetivo) {
-    const texto = document.getElementById(id),
-      disparador = document.getElementById(objetivo);
+  document.addEventListener("DOMContentLoaded", () => {
+    function textoAnimado(id, objetivo) {
+      const texto = document.getElementById(id),
+        disparador = document.getElementById(objetivo);
 
-    let separarTexto = texto.textContent.split("");
-    texto.textContent = "";
+      let separarTexto = texto.textContent.split("");
+      texto.textContent = "";
 
-    separarTexto.forEach((letra) => {
-      let caracter = letra === " " ? "&nbsp;" : letra;
-      texto.innerHTML += `
+      separarTexto.forEach((letra) => {
+        let caracter = letra === " " ? "&nbsp;" : letra;
+        texto.innerHTML += `
         <div>
           <span class="text-3xl md:text-3xl lg:text-4xl">${caracter}</span>
           <span class="second-child text-3xl md:text-3xl lg:text-4xl">${caracter}</span>
         </div>`;
-    });
+      });
 
-    disparador.addEventListener("mouseover", () => {
-      let cuenta = 0;
-      const intervalo = setInterval(() => {
-        if (cuenta < texto.children.length) {
-          texto.children[cuenta].classList.add("animation");
-          cuenta += 1;
-        } else {
-          clearInterval(intervalo);
-        }
-      }, 30);
-    });
+      disparador.addEventListener("mouseover", () => {
+        let cuenta = 0;
+        const intervalo = setInterval(() => {
+          if (cuenta < texto.children.length) {
+            texto.children[cuenta].classList.add("animation");
+            cuenta += 1;
+          } else {
+            clearInterval(intervalo);
+          }
+        }, 30);
+      });
 
-    disparador.addEventListener("mouseout", () => {
-      let cuenta = 0;
-      const intervalo = setInterval(() => {
-        if (cuenta < texto.children.length) {
-          texto.children[cuenta].classList.remove("animation");
-          cuenta += 1;
-        } else {
-          clearInterval(intervalo);
-        }
-      }, 30);
-    });
-  }
+      disparador.addEventListener("mouseout", () => {
+        let cuenta = 0;
+        const intervalo = setInterval(() => {
+          if (cuenta < texto.children.length) {
+            texto.children[cuenta].classList.remove("animation");
+            cuenta += 1;
+          } else {
+            clearInterval(intervalo);
+          }
+        }, 30);
+      });
+    }
 
-  textoAnimado("logo", "logotipo");
-});
+    textoAnimado("logo", "logotipo");
+  });
 </script>
