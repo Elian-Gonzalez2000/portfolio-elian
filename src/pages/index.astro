@@ -3,12 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Home from '../sections/Home.astro';
+import About from '../sections/About.astro';
+import Service from '../sections/Services.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<Header/>
-    <Home/>
+		<Header />
+    <Home />
+    <About />
+    <Service />
 	</main>
 </Layout>
 
@@ -164,4 +168,5 @@ ul {
   transform: translateY(-3rem);
 }
 }
+
 </style>
