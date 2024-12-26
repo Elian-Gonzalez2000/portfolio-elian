@@ -313,11 +313,13 @@ import SectionTitle from "../components/SectionTitle.astro";
 
 <style>
   /* ----- About Section ----- */
-  .skills-img:hover {
+  .skills-img:hover,
+  .skills-img.active-animation {
     animation: skills-animations 1.1s ease-in alternate;
   }
 
-  .skills-img:hover p {
+  .skills-img:hover p,
+  .skills-img.active-animation p {
     transform: rotate(0deg);
   }
 
@@ -397,3 +399,16 @@ import SectionTitle from "../components/SectionTitle.astro";
     color: #e04a34;
   }
 </style>
+
+<script>
+  // Mantein the animation when the mouse is over the image
+  document.querySelectorAll(".skills-img").forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      element.classList.add("active-animation");
+    });
+
+    element.addEventListener("animationend", () => {
+      element.classList.remove("active-animation");
+    });
+  });
+</script>
