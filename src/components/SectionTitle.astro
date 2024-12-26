@@ -1,0 +1,11 @@
+--- 
+interface Props {
+  title: string;
+  classes?: string;
+}
+
+const { title, classes } = Astro.props ;
+---
+
+<h2 class=`border-y-2 border-first-color py-3 my-6 mx-auto w-60 text-center font-semibold text-text-dark-color ${classes && classes}`> {title} </h2>
+
