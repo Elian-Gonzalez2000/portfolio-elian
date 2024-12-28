@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Home from '../sections/Home.astro';
 import About from '../sections/About.astro';
 import Service from '../sections/Services.astro';
+import Projects from '../sections/Projects.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,6 +13,7 @@ import Service from '../sections/Services.astro';
 		<Header />
     <Home />
     <About />
+    <Projects />
     <Service />
 	</main>
 </Layout>
@@ -125,6 +127,7 @@ img {
   vertical-align: top;
   width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 p {
