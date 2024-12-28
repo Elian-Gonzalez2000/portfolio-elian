@@ -1,17 +1,68 @@
 ---
 interface ButtonProps {
-  id: string | undefined;
+  id?: string | undefined;
   href: string;
-  text: string | undefined;
-  classes: string | undefined;
+  rel?:
+    | "noopener"
+    | "noreferrer"
+    | "nofollow"
+    | "canonical"
+    | "dns-prefetch"
+    | "preconnect"
+    | "prefetch"
+    | "prerender"
+    | "stylesheet"
+    | "alternate"
+    | "author"
+    | "help"
+    | "icon"
+    | "license"
+    | "manifest"
+    | "modulepreload"
+    | "pingback"
+    | "search"
+    | "tag"
+    | "privacy-policy";
+  target: "_blank | _self | _parent | _top";
+  text?: string;
+  classes?: string;
+  icon?: string;
+  iconSide?: "left" | "right";
+  textColor?: string;
+  bgColor?: string;
+  textHoverColor?: string;
+  bgHoverColor?: string;
+  margin?: string;
+  width?: string;
 }
 
-const {id, href, text, classes } = Astro.props as ButtonProps;
+const {
+  id,
+  href,
+  text,
+  classes,
+  rel,
+  target,
+  icon,
+  iconSide = "left",
+  textColor = "text-text-light-color",
+  textHoverColor = "hover:text-text-dark-color",
+  bgColor = "bg-blue-500",
+  bgHoverColor = "hover:bg-gray-300",
+  margin = "mb-3",
+  width = "w-4/5",
+} = Astro.props as ButtonProps;
 ---
+
 <!-- create a buttom component for astro -->
+<a
+  id={id}
+  href={href}
+  rel={rel}
+  target={target}
+  class={`${classes && classes} ${margin} flex justify-center items-center ${width} py-2 ${bgColor} ${textColor} border-2 border-gray-800 rounded-md transition duration-300 ${bgHoverColor} ${textHoverColor}`}
+  ><slot />
+  {` ${text ? text : ""} `}
+</a>
 
-<a id={id} href={href} class={`my-3 flex justify-center items-center w-4/5 py-2 bg-blue-500 text-white border-2 border-gray-800 rounded-md transition duration-300 hover:bg-gray-300 hover:text-black ${classes && classes}`}><slot/> {text && text}</a>
-
-<style>
-  
-  </style>
+<style></style>
