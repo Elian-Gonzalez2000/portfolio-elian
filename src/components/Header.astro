@@ -1,10 +1,16 @@
-<header class="fixed bottom-0 left-0 right-0 lg:bottom-auto h-16 lg:h-fit bg-first-color z-[1000]">
-  <section class="container mx-auto max-w-screen-lg flex justify-between items-center py-4 px-4 lg:py-2">
+<header
+  class="fixed bottom-0 left-0 right-0 lg:bottom-auto h-16 lg:h-fit bg-first-color z-[1000]"
+>
+  <section
+    class="container mx-auto flex justify-between items-center py-4 px-4 lg:py-2"
+  >
     <div class="logo w-3/4 lg:w-1/3">
       <h2 class="text-text-light-color text-lg lg:text-2xl">Elian Gonzalez</h2>
     </div>
 
-    <div class="menu-btn w-9 h-9 border border-gray-200 text-gray-200 flex justify-center items-center rounded-full transition-transform duration-300 hover:text-first-color hover:bg-gray-light-color lg:hidden cursor-pointer">
+    <div
+      class="menu-btn w-9 h-9 border border-gray-200 text-gray-200 flex justify-center items-center rounded-full transition-transform duration-300 hover:text-first-color hover:bg-gray-light-color lg:hidden cursor-pointer"
+    >
       <svg
         aria-hidden="true"
         focusable="false"
@@ -22,22 +28,52 @@
       </svg>
     </div>
 
-    <nav class="nav fixed top-0 left-0 right-0 bottom-16 bg-first-alpha-color border-b-2 border-black-gray-color z-[999] transform translate-x-full transition-transform duration-500 lg:relative lg:translate-x-0 lg:bg-transparent lg:border-none ">
-      <ul class="flex flex-col lg:gap-5 lg:flex-row lg:items-center mt-2 lg:mt-0 ">
+    <nav
+      class="nav fixed top-0 left-0 right-0 bottom-16 bg-first-alpha-color border-b-2 border-black-gray-color z-[999] transform translate-x-full transition-transform duration-500 lg:relative lg:translate-x-0 lg:bg-transparent lg:border-none"
+    >
+      <ul
+        class="flex flex-col lg:gap-5 lg:flex-row lg:items-center mt-2 lg:mt-0"
+      >
         <li class="w-full text-center">
-          <a href="#home" class="block text-gray-light-color text-lg  py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200">Inicio</a>
+          <a
+            href="#home"
+            data-scroll-spy
+            class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
+            >Inicio</a
+          >
         </li>
         <li class="w-full text-center">
-          <a href="#about" class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200">Acerca</a>
+          <a
+            href="#about"
+            data-scroll-spy
+            class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
+            >Acerca</a
+          >
         </li>
         <li class="w-full text-center">
-          <a href="#services" class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5  lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200">Servicios</a>
+          <a
+            href="#projects"
+            data-scroll-spy
+            class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
+            >Proyectos</a
+          >
         </li>
         <li class="w-full text-center">
-          <a href="#projects" class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200">Proyectos</a>
+          <a
+            href="#services"
+            data-scroll-spy
+            class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
+            >Servicios</a
+          >
         </li>
+
         <li class="w-full text-center">
-          <a href="#contact" class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200">Contacto</a>
+          <a
+            href="#contact"
+            data-scroll-spy
+            class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
+            >Contacto</a
+          >
         </li>
       </ul>
     </nav>
@@ -47,7 +83,10 @@
 <script>
   function hamburguerMenu(menu, menubtn, menuLink) {
     document.addEventListener("click", (e) => {
-      if (e.target instanceof HTMLDivElement || e.target instanceof SVGElement) {
+      if (
+        e.target instanceof HTMLDivElement ||
+        e.target instanceof SVGElement
+      ) {
         if (e.target.matches(menubtn) || e.target.matches(`${menubtn} *`)) {
           document.querySelector(menu).classList.toggle("translate-x-full");
         }
