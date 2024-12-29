@@ -6,6 +6,7 @@ import Home from '../sections/Home.astro';
 import About from '../sections/About.astro';
 import Service from '../sections/Services.astro';
 import Projects from '../sections/Projects.astro';
+import Contact from '../sections/Contact.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -15,6 +16,7 @@ import Projects from '../sections/Projects.astro';
     <About />
     <Projects />
     <Service />
+    <Contact />
 	</main>
 </Layout>
 
@@ -138,6 +140,11 @@ ul {
   list-style: none;
 }
 
+.nav ul li a.active {
+  opacity: 1;
+  color: var(--text-dark-color);
+  background-color: var(--gray-light-color);
+}
 /* ----- Texto Animado ----- */
 .hero-image-title h1#logo div {
   position: relative;
@@ -173,3 +180,40 @@ ul {
 }
 
 </style>
+
+<script>
+
+  /* Scroll Spy para los enlaces del menu, colocar data-scroll-spy en los enlaces y secciones que se quieran vincular*/
+
+function scrollSpy() {
+  const $section = document.querySelectorAll("section[data-scroll-spy]");
+  const cb = (entries) => {
+    // console.log("entries", entries);
+
+    entries.forEach((entry) => {
+      //console.log("entry", entry);
+      const id = entry.target.getAttribute("id");
+      // console.log(id);
+
+      if (entry.isIntersecting) {        
+        document.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add(
+          "active"
+        );
+      } else {
+        document.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.remove(
+          "active"
+        );
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(cb, {
+    //root
+    //rootMargin
+    threshold: [0.5,0.75],
+  });
+
+  $section.forEach((el) => observer.observe(el));
+}
+document.addEventListener("DOMContentLoaded", scrollSpy);
+</script>
