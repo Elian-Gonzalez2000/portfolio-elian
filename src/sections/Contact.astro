@@ -164,6 +164,7 @@ import SectionTitle from "../components/SectionTitle.astro";
           Por Contactarme
         </h3>
         <svg
+          class="text-center"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -268,24 +269,6 @@ import SectionTitle from "../components/SectionTitle.astro";
     border: thin solid var(--form-ok-color);
   }
 
-  .contact-form-error {
-    margin-top: -1rem;
-    font-size: 80%;
-    background-color: var(--form-error-color);
-    border-radius: 5px;
-    color: #fff;
-    transition: all 800ms ease;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    display: none;
-    width: 100%;
-  }
-
-  .contact-form-error.is-active {
-    display: block;
-    animation: show-message 1s 1 normal 0s ease-out both;
-  }
-
   .none {
     display: none;
   }
@@ -373,18 +356,90 @@ import SectionTitle from "../components/SectionTitle.astro";
 </style>
 
 <script>
+  function contactFormValidation(): void {
+    const $form = document.querySelector<HTMLFormElement>(".contact-form");
+    const $inputs = document.querySelectorAll<HTMLInputElement>(
+      ".contact-form [required]"
+    );
+
+    $inputs.forEach((input) => createErrorSpan(input));
+
+    document.addEventListener("keyup", handleInputValidation);
+  }
+
+  // Crear el span de error debajo de cada input
+  function createErrorSpan(input: HTMLInputElement): void {
+    const $span = document.createElement("span");
+    $span.id = `${input.name}-error`;
+    $span.textContent = input.title;
+    $span.classList.add("contact-form-error", "hidden");
+    input.insertAdjacentElement("afterend", $span);
+  }
+
+  function handleInputValidation(e: KeyboardEvent): void {
+    const $target = e.target as HTMLInputElement | null;
+
+    if ($target && $target.matches(".contact-form [required]")) {
+      const pattern = $target.pattern || $target.dataset.pattern;
+      const $errorSpan = document.querySelector(
+        `#${$target.name}-error`
+      ) as HTMLElement;
+
+      if (!$errorSpan) {
+        console.error(
+          `No se encontró el span de error para el input: ${$target.name}`
+        );
+        return;
+      }
+
+      if (pattern) {
+        const regEx = new RegExp(pattern);
+        toggleError($errorSpan, !regEx.test($target.value));
+      } else {
+        toggleError($errorSpan, $target.value === "");
+      }
+    }
+  }
+
+  // Mostrar/ocultar errores
+  function toggleError(element: HTMLElement, isError: boolean): void {
+    if (isError) {
+      element.classList.add("is-active");
+      element.classList.remove("hidden");
+    } else {
+      element.classList.remove("is-active");
+      element.classList.add("hidden");
+    }
+  }
+
+  // Enviar formulario
+
   function sendContactForm() {
     document.addEventListener("submit", (e: Event) => {
       e.preventDefault();
-      const form = e.target as HTMLFormElement;
+      const form = e.target as HTMLFormElement | null;
+      if (!form) {
+        console.error("El evento no proviene de un formulario válido.");
+        return;
+      }
       const $gracias = document.getElementById("gracias"),
         $errorResponse = document.getElementById("error"),
-        $formResponse = document.querySelector(".modal#gracias .modal-content"),
-        $formLoader = document.querySelector(".contact-form-loader");
+        $formResponse = document.querySelector(
+          ".modal#gracias .modal-content"
+        ) as HTMLElement,
+        $formLoader = document.querySelector(
+          ".contact-form-loader"
+        ) as HTMLElement;
 
-      $gracias.classList.remove("opacity-0");
-      $gracias.classList.remove("invisible");
-      $formLoader.classList.remove("none");
+      if (!$gracias || !$errorResponse || !$formResponse || !$formLoader) {
+        console.error(
+          "Uno o más elementos necesarios no se encontraron en el DOM."
+        );
+        return;
+      }
+
+      showElement($gracias);
+      showElement($formLoader, false);
 
       console.log($gracias, $errorResponse, $formResponse, $formLoader);
       fetch("https://formsubmit.co/ajax/eliancarlogm@gmail.com", {
@@ -392,39 +447,49 @@ import SectionTitle from "../components/SectionTitle.astro";
         body: new FormData(form),
       })
         .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-        .then((data) => {
-          //console.log(data);
-          $formResponse.classList.remove("opacity-0");
-          $formResponse.classList.remove("invisible");
+        .then(() => {
+          showElement($formResponse);
           form.reset();
         })
         .catch((error) => {
-          //console.log(error);
-          $errorResponse.classList.remove("opacity-0");
-          $errorResponse.classList.remove("invisible");
+          console.error("Error al enviar el formulario:", error);
+          showElement($errorResponse);
         })
         .finally(() => {
-          $formLoader.classList.add("none");
-          if (
-            $formResponse.classList.contains("opacity-0") &&
-            $formResponse.classList.contains("invisible") &&
-            $errorResponse.classList.contains("invisible") &&
-            $errorResponse.classList.contains("opacity-0")
-          ) {
-            $gracias.classList.add("opacity-0");
-            $gracias.classList.add("invisible");
-          } else {
-            setTimeout(() => {
-              $formResponse.classList.add("opacity-0");
-              $formResponse.classList.add("invisible");
-              $errorResponse.classList.add("opacity-0");
-              $errorResponse.classList.add("invisible");
-              $gracias.classList.add("opacity-0");
-              $gracias.classList.add("invisible");
-            }, 2000);
-          }
+          hideElement($formLoader);
+          handleResponseVisibility($gracias, $formResponse, $errorResponse);
         });
     });
   }
-  document.addEventListener("DOMContentLoaded", sendContactForm);
+  function showElement(element: HTMLElement, removeHidden: boolean = true) {
+    element.classList.remove("opacity-0");
+    if (removeHidden) element.classList.remove("invisible");
+  }
+
+  function hideElement(element: HTMLElement) {
+    element.classList.add("opacity-0", "invisible");
+  }
+
+  function handleResponseVisibility(
+    $gracias: HTMLElement,
+    $formResponse: HTMLElement,
+    $errorResponse: HTMLElement
+  ) {
+    if (
+      $formResponse.classList.contains("opacity-0") &&
+      $errorResponse.classList.contains("opacity-0")
+    ) {
+      hideElement($gracias);
+    } else {
+      setTimeout(() => {
+        hideElement($formResponse);
+        hideElement($errorResponse);
+        hideElement($gracias);
+      }, 3000);
+    }
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    sendContactForm();
+    contactFormValidation();
+  });
 </script>
