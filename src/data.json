@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "name": "Flipkart Clone",
+      "description": "Hecha con React, Node.js y MongoDB con pagina de administrador",
+      "urlImage": "https://i.ibb.co/mzDbN3k/flipkart-clone-image.png",
+      "urlGithub": "https://github.com/Elian-Gonzalez2000/calculadora",
+      "urlWeb": "https://elian-gonzalez2000.github.io/ecommerce-flipkart-clone/client/dist/#/"
+    },
+    {
       "name": "Finance Business",
       "description": "Sitio web con HTML, CSS y JavaScript",
       "urlImage": "https://i.ibb.co/gW1s6W5/finance-business.png",
@@ -17,30 +24,23 @@
     {
       "name": "Gandalf",
       "description": "Landing Page con HTML, CSS y Javascript",
-      "urlImage": "",
-      "urlGithub": "",
-      "urlWeb": ""
+      "urlImage": "https://i.ibb.co/C89rH4v/gandalf.png",
+      "urlGithub": "https://github.com/Elian-Gonzalez2000/Gandalf-ca",
+      "urlWeb": "https://elian-gonzalez2000.github.io/Gandalf-ca/"
     },
     {
-      "name": "",
-      "description": "",
-      "urlImage": "",
-      "urlGithub": "",
-      "urlWeb": ""
+      "name": "Radiance",
+      "description": "Landing Page con HTML y CSS y JavaScript",
+      "urlImage": "https://i.ibb.co/MR2DKZL/radiance.png",
+      "urlGithub": "https://github.com/Elian-Gonzalez2000/radiance",
+      "urlWeb": "https://elian-gonzalez2000.github.io/radiance/"
     },
     {
-      "name": "",
-      "description": "",
-      "urlImage": "",
-      "urlGithub": "",
-      "urlWeb": ""
-    },
-    {
-      "name": "",
-      "description": "",
-      "urlImage": "",
-      "urlGithub": "",
-      "urlWeb": ""
+      "name": "Artistas Web",
+      "description": "Landing Page con HTML y CSS",
+      "urlImage": "https://i.ibb.co/ZX2zKzZ/artistas-web.png",
+      "urlGithub": "https://github.com/Elian-Gonzalez2000/artistas-web",
+      "urlWeb": "https://elian-gonzalez2000.github.io/artistas-web/"
     }
   ]
 }
