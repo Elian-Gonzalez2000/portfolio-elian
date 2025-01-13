@@ -8,18 +8,21 @@ import SectionTitle from "../components/SectionTitle.astro";
   data-scroll-spy
 >
   <div
-    class="haero-image"
+    class="hero-image"
     style="--hero-image: url(https://i.ibb.co/HzfF2BS/hero-image-contact.jpg); --hero-attachment: fixed;"
   >
     <aside
-      class="hero-image-opacity"
+      class="hero-image-opacity flex flex-col items-center justify-center min-h-screen w-screen bg-black bg-opacity-50 text-center"
       style="--hero-opacity-color: var(--black-alpha-color)"
     >
       <div
         class="container flex flex-col justify-center items-center py-8 px-5"
       >
-        <div class="mb-10 text-text-light-color">
-          <SectionTitle title="¿Interesad@?" classes="section-title" />
+        <div class="mb-10">
+          <SectionTitle
+            title="¿Interesad@?"
+            classes="section-title text-text-light-color"
+          />
         </div>
         <div
           class="contact-cards grid grid-cols-1 md:grid-cols-2 justify-evenly content-center items-center gap-x-4 gap-y-4 w-full mb-8"
@@ -198,6 +201,29 @@ import SectionTitle from "../components/SectionTitle.astro";
 
 <style>
   /* ----- Contact Section ----- */
+  .hero-image {
+    background-image: var(--hero-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: var(--hero-attachment);
+  }
+
+  .hero-image-opacity {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--hero-opacity-color);
+  }
+
+  .hero-image-title {
+    font-size: 7.5vw;
+    color: var(--hero-text-color);
+  }
+
   .card {
     padding: 2rem;
     background-color: var(--white-color);
