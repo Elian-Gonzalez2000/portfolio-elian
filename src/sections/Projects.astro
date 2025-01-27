@@ -4,7 +4,6 @@ import SectionTitle from "../components/SectionTitle.astro";
 
 const response = await fetch("http://localhost:4321/src/data.json");
 const data = await response.json();
-await console.log(data.projects);
 ---
 
 <section
@@ -38,7 +37,7 @@ await console.log(data.projects);
                 <p class="text-sm">{proj.description}</p>
                 <div class="project-card-link w-full flex justify-evenly gap-3">
                   <Button
-                    href={`${proj.urlweb}`}
+                    href={`${proj.urlWeb}`}
                     target="_blank"
                     rel="noopener"
                     classes="btn max-w-36 inline-block p-2 border-2 border-solid border-text-dark-color font-semibold text-center transition-all duration-200 text-sm max-w-32"
