@@ -11,33 +11,37 @@ import SectionTitle from "../components/SectionTitle.astro";
   <div
     class="container mx-auto grid grid-cols-1 lg:grid-cols-2 justify-between items-start"
   >
-    <SectionTitle title="Acerca de mi" classes="lg:col-span-2 mb-9" />
+    <SectionTitle
+      title="Acerca de mi"
+      classes="lg:col-span-2 mb-9"
+      dataText="aboutSectionTitle"
+    />
     <div class="about-content mb-10">
-      <h3 class="text-2xl mb-5">¿Quien Soy?</h3>
-      <h4 class="text-2xl leading-9 mb-6">
+      <h3 class="text-2xl mb-5" data-text="aboutTextH3">¿Quien Soy?</h3>
+      <h4 class="text-2xl leading-9 mb-6" data-text="aboutTextH4">
         Soy Elian Gonzalez, Fullstack Developer
       </h4>
-      <p class="leading-9">
+      <p class="leading-9" data-text="aboutTextParagraph1">
         Soy un desarrollador Fullstack apasionado por crear soluciones digitales
         eficientes y funcionales. Cuento con experiencia en tecnologías clave
         como React, JavaScript, Node.js, SQL y CSS, entre otras herramientas
         esenciales en el desarrollo web moderno.
       </p>
       <br />
-      <p class="leading-9">
+      <p class="leading-9" data-text="aboutTextParagraph2">
         Siempre estoy en búsqueda de aprender y perfeccionar tanto mis
         habilidades técnicas como mis competencias personales, lo que me permite
         adaptarme a las necesidades cambiantes del sector tecnológico.
       </p>
       <br />
-      <p class="leading-9">
+      <p class="leading-9" data-text="aboutTextParagraph3">
         Disfruto diseñar y desarrollar interfaces web intuitivas y atractivas,
         ya sea trabajando de manera individual o como parte de un equipo, con el
         objetivo de aportar un impacto positivo a cada proyecto en el que
         participo.
       </p>
       <br />
-      <p class="leading-9">
+      <p class="leading-9" data-text="aboutTextParagraph4">
         Además, tengo experiencia en el desarrollo y mantenimiento de APIs en el
         backend, aplicando buenas prácticas, metodologías ágiles y técnicas de
         optimización para garantizar sistemas robustos y escalables.
@@ -65,7 +69,10 @@ import SectionTitle from "../components/SectionTitle.astro";
           >
           </path>
         </svg>
-        <p class="inline-block text-xl font-normal text-inherit">
+        <p
+          class="inline-block text-xl font-normal text-inherit"
+          data-text="aboutLinkDownloadCV"
+        >
           Descargar CV
         </p>
       </Button>
@@ -74,7 +81,9 @@ import SectionTitle from "../components/SectionTitle.astro";
       class="grid grid-cols-2 sm:grid-cols-3 justify-center content-center gap-4"
     >
       <div class="skills-title col-span-2 sm:col-span-3">
-        <h3 class="text-2xl mb-5 sm:pl-9">Mis conocimientos</h3>
+        <h3 class="text-2xl mb-5 sm:pl-9" data-text="aboutSkillsTitle">
+          Mis conocimientos
+        </h3>
       </div>
       <article class="skills-img text-center py-4 html5">
         <svg
