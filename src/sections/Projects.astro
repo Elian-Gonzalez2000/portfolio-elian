@@ -4,6 +4,7 @@ import SectionTitle from "../components/SectionTitle.astro";
 
 const response = await fetch("http://localhost:4321/src/data.json");
 const data = await response.json();
+const { projects } = Astro.props;
 ---
 
 <section
@@ -13,17 +14,23 @@ const data = await response.json();
 >
   <div class="container grid grid-cols-1 items-center text- justify-center">
     <div>
-      <SectionTitle title="Mis Proyectos" classes="mb-10" />
+      <SectionTitle
+        title="Mis Proyectos"
+        classes="mb-10"
+        dataText="projectsSectionTitle"
+      />
     </div>
     <div>
-      <p class="mb-10">Estos son algunos de mis proyectos realizados:</p>
+      <p class="mb-10" data-text="projectsTextParagraph">
+        Estos son algunos de mis proyectos realizados:
+      </p>
     </div>
     <div
       class="projects-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-evenly items-center gap-4"
     >
       {
-        data &&
-          data.projects.map((proj) => (
+        projects &&
+          projects.map((proj) => (
             <article class="project-card w-full justify-center items-center rounded-lg overflow-hidden">
               <div class="project-img overflow-hidden border-b-2 border-solid border-first-color">
                 <img
@@ -34,7 +41,9 @@ const data = await response.json();
               </div>
               <aside class="project-card-info mb-4 md:mb-0 flex flex-col flex-wrap justify-evenly items-center gap-3 px-5 py-4 w-full text-text-dark-color bg-white-color transition-all duration-300">
                 <h4 class="text-2xl text-first-color">{proj.name}</h4>
-                <p class="text-sm">{proj.description}</p>
+                <p class="text-sm" data-project-description>
+                  {proj.descriptionES}
+                </p>
                 <div class="project-card-link w-full flex justify-evenly gap-3">
                   <Button
                     href={`${proj.urlWeb}`}
@@ -77,6 +86,7 @@ const data = await response.json();
                     bgColor="bg-first-color"
                     bgHoverColor="hover:bg-second-color"
                     margin="my-0"
+                    dataText="projectsLinkGithub"
                   >
                     Codigo{" "}
                     <svg
