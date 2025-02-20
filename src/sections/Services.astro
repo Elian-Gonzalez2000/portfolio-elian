@@ -9,10 +9,16 @@ import SectionTitle from "../components/SectionTitle.astro";
 >
   <div class="container">
     <div>
-      <SectionTitle title="Mis Servicios" classes="mb-10" />
+      <SectionTitle
+        title="Mis Servicios"
+        classes="mb-10"
+        dataText="servicesSectionTitle"
+      />
     </div>
     <div class="mb-10">
-      <p>Estos son los servicios que le ofrezco a mis clientes:</p>
+      <p data-text="servicesTextParagraph">
+        Estos son los servicios que le ofrezco a mis clientes:
+      </p>
     </div>
     <div
       class="services-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center items-center text-center"
@@ -33,8 +39,8 @@ import SectionTitle from "../components/SectionTitle.astro";
             ></path>
           </svg>
         </div>
-        <h3 class="font-semibold">Diseño Web</h3>
-        <p>
+        <h3 class="font-semibold" data-text="servicesTextTitle1">Diseño Web</h3>
+        <p data-text="servicesTextParagraph1">
           Prototipo y maqueto tus diseños estaticos y los convierto en
           increibles sitios y aplicaciones web responsivas, optimas y
           accesibles.
@@ -63,8 +69,10 @@ import SectionTitle from "../components/SectionTitle.astro";
             </path>
           </svg>
         </div>
-        <h3 class="font-semibold">Diseño Responsive</h3>
-        <p>
+        <h3 class="font-semibold" data-text="servicesTextTitle2">
+          Diseño Responsive
+        </h3>
+        <p data-text="servicesTextParagraph2">
           Tu sitio se mostrara en cada dispositivo, incluyendo computadoras de
           escritorio, tabletas y telefonos moviles.
         </p>
@@ -90,8 +98,8 @@ import SectionTitle from "../components/SectionTitle.astro";
             <circle cx="17.657" cy="17.658" r="2"></circle>
           </svg>
         </div>
-        <h3 class="font-semibold">WPO</h3>
-        <p>
+        <h3 class="font-semibold" data-text="servicesTextTitle3">WPO</h3>
+        <p data-text="servicesTextParagraph3">
           Web Perfomance Optimization, hago que tus sitios y aplicaciones web
           mejoren su tiempo de carga y respuesta.
         </p>
@@ -116,8 +124,8 @@ import SectionTitle from "../components/SectionTitle.astro";
             ></path>
           </svg>
         </div>
-        <h3 class="font-semibold">SEO</h3>
-        <p>
+        <h3 class="font-semibold" data-text="servicesTextTitle4">SEO</h3>
+        <p data-text="servicesTextParagraph4">
           Search Engine Optimization, optimizo tus sitios y aplicaciones web
           para que mejores tu posicion en los buscadores organicamente.
         </p>
@@ -138,8 +146,8 @@ import SectionTitle from "../components/SectionTitle.astro";
             ></path>
           </svg>
         </div>
-        <h3 class="font-semibold">SMO</h3>
-        <p>
+        <h3 class="font-semibold" data-text="servicesTextTitle5">SMO</h3>
+        <p data-text="servicesTextParagraph5">
           Social Media Optimization y Marketing de contenido, te ayudo a elegir
           los canales digitales correctos para llegar a tu audiencia ideal.
         </p>
@@ -168,8 +176,10 @@ import SectionTitle from "../components/SectionTitle.astro";
             ></path>
           </svg>
         </div>
-        <h3 class="font-semibold">Web Hosting</h3>
-        <p>
+        <h3 class="font-semibold" data-text="servicesTextTitle6">
+          Web Hosting
+        </h3>
+        <p data-text="servicesTextParagraph6">
           ¿No cuentas con dominio y hospedaje web para tu proyecto? No te
           preocupes, de esas cosas tecnicas me encargo yo.
         </p>
