@@ -8,6 +8,8 @@ import Service from '../sections/Services.astro';
 import Projects from '../sections/Projects.astro';
 import Contact from '../sections/Contact.astro';
 import Footer from '../components/Footer.astro';
+
+const data = await import('../data.json');
 ---
 
 <Layout title="Welcome to Astro.">
@@ -15,7 +17,7 @@ import Footer from '../components/Footer.astro';
 		<Header />
     <Home />
     <About />
-    <Projects client:load />
+    <Projects  projects={data.default.projects}/>
     <Service />
     <Contact />
     <Footer />
@@ -236,5 +238,57 @@ function scrollSpy() {
 
   $section.forEach((el) => observer.observe(el));
 }
+
+async function translationTexts (){
+  const language = localStorage.getItem("language") || "spanish";
+  const data = await import('../data.json');
+  const projectsTranslations = data.default.projects;
+  const translationsEN = data.default.translations.english;
+  const translationsES = data.default.translations.spanish;
+
+  const $texts = document.querySelectorAll("[data-text]");
+  const $projects = document.querySelectorAll("[data-project-description]");
+  const $inputs = document.querySelectorAll("[data-input]");
+  $texts.forEach((el: HTMLElement)=>{
+    const text = el.dataset.text;
+    if(language === "spanish"){
+      el.textContent = translationsES[text];
+      el.title ? el.title = translationsES[text] : "";
+    }
+    
+    if(language === "english"){
+      el.textContent = translationsEN[text];
+    }
+  });
+
+  $projects.forEach((el: HTMLElement, i)=>{    
+    if(language === "spanish"){
+      el.textContent = projectsTranslations[i].descriptionES;
+    }
+    
+    if(language === "english"){
+      el.textContent = projectsTranslations[i].descriptionEN;
+    }
+  });
+
+  $inputs.forEach((el: HTMLInputElement)=>{
+    const text = el.dataset.input;
+    const inputError = el.dataset.error;
+    
+    if(language === "spanish"){
+      el.placeholder = translationsES[text];
+      if(inputError) el.title = translationsES[inputError];
+      if(el.type === "submit") el.value = translationsES[text];
+    }
+    
+    if(language === "english"){
+      el.placeholder = translationsEN[text];
+      if(inputError) el.title = translationsEN[inputError];
+      if(el.type === "submit") el.value = translationsEN[text];
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", scrollSpy);
+document.addEventListener("DOMContentLoaded", translationTexts);
 </script>
