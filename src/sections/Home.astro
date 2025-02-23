@@ -14,7 +14,12 @@
         />
       </div>
       <div class="hero-image-title text-white mb-3 lg:mb-5">
-        <p class="text-lg md:text-xl lg:text-2xl">¡Hola a Todos! Soy...</p>
+        <p
+          class="text-lg md:text-xl lg:text-2xl"
+          data-text="homeTextFirstParagraph"
+        >
+          ¡Hola a Todos! Soy...
+        </p>
         <h1
           id="logo"
           class="relative flex flex-wrap justify-center text-2xl font-light my-4 overflow-hidden lg:my-5"
@@ -28,7 +33,7 @@
           id="logotipo"
           href="#contact"
           class="bg-second-color hover:bg-gray-light-color hover:text-second-color text-text-light-color font-medium py-2 px-4 rounded-lg md:text-lg lg:text-xl transform hover:scale-110 transition-all duration-300"
-          >Contactame</a
+          data-text="homeLinkContact">Contactame</a
         >
       </div>
     </aside>
@@ -36,27 +41,27 @@
 </section>
 
 <style>
-  /* ----- Texto Animado -----
-.hero-image-title h1#logo div {
-  position: relative;
-  transition: 0.5s all ease;
-  color: var(--white-color);
-}
+  /* ----- Texto Animado -----  */
+  .hero-image-title h1#logo div {
+    position: relative;
+    transition: 0.5s all ease;
+    color: var(--white-color);
+  }
 
-.hero-image-title h1#logo div span {
-  position: relative;
-  transition: 0.5s all ease;
-}
+  .hero-image-title h1#logo div span {
+    position: relative;
+    transition: 0.5s all ease;
+  }
 
-.hero-image-title h1#logo div span.second-child {
-  position: absolute;
-  top: 2.1rem;
-  left: 0;
-}
+  .hero-image-title h1#logo div span.second-child {
+    position: absolute;
+    top: 2.1rem;
+    left: 0;
+  }
 
-.hero-image-title h1#logo div.animation {
-  transform: translateY(-2.1rem);
-} */
+  .hero-image-title h1#logo div.animation {
+    transform: translateY(-2.1rem);
+  }
 </style>
 
 <script>
