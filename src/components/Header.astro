@@ -1,11 +1,31 @@
+---
+
+---
+
 <header
   class="fixed bottom-0 left-0 right-0 lg:bottom-auto h-16 lg:h-fit bg-first-color z-[1000]"
 >
   <section
     class="container mx-auto flex justify-between items-center py-4 px-4 lg:py-2 text-text-light-color"
   >
-    <div class="logo w-3/4 lg:w-1/3">
+    <div class="logo w-3/4 lg:w-1/3 flex items-center gap-2">
       <h2 class="text-text-light-color text-lg lg:text-2xl">Elian Gonzalez</h2>
+      <div class="flex gap-2 items-center">
+        <picture class="w-auto">
+          <img
+            class="flag spain lg:w-auto border border-transparent hover:border-black-color border-solid w-7"
+            src="../../public/icons8-españa-48.png"
+            alt="spanish"
+          />
+        </picture>
+        <picture>
+          <img
+            class="flag english lg:w-auto border border-transparent hover:border-black-color w-6 border-solid"
+            src="../../public/icons8-inglaterra-40.png"
+            alt="english"
+          />
+        </picture>
+      </div>
     </div>
 
     <div
@@ -38,6 +58,7 @@
           <a
             href="#home"
             data-scroll-spy
+            data-text="headerLinkHome"
             class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
             >Inicio</a
           >
@@ -45,6 +66,7 @@
         <li class="w-full text-center">
           <a
             href="#about"
+            data-text="headerLinkAbout"
             data-scroll-spy
             class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
             >Acerca</a
@@ -53,6 +75,7 @@
         <li class="w-full text-center">
           <a
             href="#projects"
+            data-text="headerLinkProjects"
             data-scroll-spy
             class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
             >Proyectos</a
@@ -61,6 +84,7 @@
         <li class="w-full text-center">
           <a
             href="#services"
+            data-text="headerLinkServices"
             data-scroll-spy
             class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
             >Servicios</a
@@ -70,6 +94,7 @@
         <li class="w-full text-center">
           <a
             href="#contact"
+            data-text="headerLinkContact"
             data-scroll-spy
             class="block text-gray-light-color text-lg py-4 lg:px-2.5 lg:py-1.5 lg:rounded-md w-full hover:opacity-100 hover:text-text-dark-color hover:bg-gray-200 transition-all duration-200"
             >Contacto</a
@@ -102,5 +127,21 @@
       }
     });
   }
+
+  function changeLanguage() {
+    const flags = document.querySelectorAll(".flag");
+    if (!localStorage.getItem("language"))
+      localStorage.setItem("language", "spanish");
+    flags.forEach((flag: HTMLImageElement) => {
+      flag.addEventListener("click", (e: Event) => {
+        console.log(flag.alt, localStorage.getItem("language"));
+
+        if (localStorage.getItem("language") === flag.alt) return;
+        localStorage.setItem("language", flag.alt);
+        location.reload();
+      });
+    });
+  }
   hamburguerMenu(".nav", ".menu-btn", ".nav ul li a");
+  changeLanguage();
 </script>
