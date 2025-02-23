@@ -135,6 +135,7 @@ import SectionTitle from "../components/SectionTitle.astro";
               pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
               required
               data-input="contactFormNamePlaceholder"
+              data-error="contactFormNameError"
             />
           </div>
           <div class="w-full md:w-6/12 md:pl-4">
@@ -147,6 +148,7 @@ import SectionTitle from "../components/SectionTitle.astro";
               pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
               required
               data-input="contactFormEmailPlaceholder"
+              data-error="contactFormEmailError"
             />
           </div>
           <textarea
@@ -158,12 +160,13 @@ import SectionTitle from "../components/SectionTitle.astro";
             title="No se exceda de los 255 caracteres"
             data-pattern="^.{1,255}$"
             required
-            data-input="contactFormTextareaPlaceholder"></textarea>
+            data-input="contactFormTextareaPlaceholder"
+            data-error="contactFormTextareaError"></textarea>
           <input
             class="font-size max-w-48 w-full text-lg font-semibold bg-first-color text-text-light-color border border-solid border-gray-light-color p-2 mb-4 mt-6 mx-auto cursor-pointer rounded-md shadow-md outline-none transition-all duration-300 hover:text-first-color hover:bg-gray-light-color hover:border-first-color placeholder:text-gray-dark-color m-x-auto"
             type="submit"
             value="Enviar"
-            data-text="contactFormSubmit"
+            data-input="contactFormSubmit"
           />
         </form>
       </div>
@@ -175,7 +178,7 @@ import SectionTitle from "../components/SectionTitle.astro";
     </div>
     <div class="modal-content opacity-0 invisible">
       <article class="contact-form-response">
-        <h3>
+        <h3 data-text="contactModalSuccess">
           ¡Muchas Gracias!
           <br />
           <br />
@@ -203,7 +206,7 @@ import SectionTitle from "../components/SectionTitle.astro";
     </div>
     <div id="error" class="modal-content opacity-0 invisible">
       <article class="contact-form-response">
-        <h3>
+        <h3 data-text="contactModalError">
           ¡Ocurrio un Error!
           <br />
           <br />
