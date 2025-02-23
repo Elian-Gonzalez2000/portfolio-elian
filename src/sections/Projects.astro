@@ -1,9 +1,6 @@
 ---
 import Button from "../components/Button.astro";
 import SectionTitle from "../components/SectionTitle.astro";
-
-const response = await fetch("http://localhost:4321/src/data.json");
-const data = await response.json();
 const { projects } = Astro.props;
 ---
 
