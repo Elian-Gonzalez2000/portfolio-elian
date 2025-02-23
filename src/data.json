@@ -25,14 +25,6 @@
       "urlWeb": "https://elian-gonzalez2000.github.io/finances-business/"
     },
     {
-      "name": "Gandalf",
-      "descriptionES": "Landing Page con HTML, CSS y Javascript",
-      "descriptionEN": "Landing Page with HTML, CSS and Javascript",
-      "urlImage": "https://i.ibb.co/C89rH4v/gandalf.png",
-      "urlGithub": "https://github.com/Elian-Gonzalez2000/Gandalf-ca",
-      "urlWeb": "https://elian-gonzalez2000.github.io/Gandalf-ca/"
-    },
-    {
       "name": "Radiance",
       "descriptionES": "Landing Page con HTML y CSS y JavaScript",
       "descriptionEN": "Landing Page with HTML, CSS and JavaScript",
@@ -94,6 +86,11 @@
       "contactFormEmailPlaceholder": "Enter your email",
       "contactFormTextareaPlaceholder": "Leave your comments",
       "contactFormSubmit": "Send",
+      "contactFormNameError": "Name only allows letters and blank spaces",
+      "contactFormEmailError": "The email entered is not valid",
+      "contactFormTextareaError": "Do not exceed 255 characters",
+      "contactModalSuccess": "Thanks So Much! <br /><br /> For Contacting Me",
+      "contactModalError": "¡Ocurrio un Error! <br /> <br /> Intentelo Nuevamente",
       "footerText": "&copy; ecgonzalez | Thank you for your interest!"
     },
     "spanish": {
@@ -140,6 +137,11 @@
       "contactFormEmailPlaceholder": "Ingresa tu correo electronico",
       "contactFormTextareaPlaceholder": "Dejame tus comentarios",
       "contactFormSubmit": "Enviar",
+      "contactFormNameError": "Nombre solo admite letras y espacios en blanco",
+      "contactFormEmailError": "El correo introducido no es valido",
+      "contactFormTextareaError": "No se exceda de los 255 caracteres",
+      "contactModalSuccess": "¡Muchas Gracias! <br /><br /> Por Contactarme",
+      "contactModalError": "¡Ocurrio un Error! <br /> <br /> Intentelo Nuevamente",
       "footerText": "&copy; ecgonzalez | ¡Gracias por tu interes!"
     }
   }
