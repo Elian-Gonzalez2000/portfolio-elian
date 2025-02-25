@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +8,78 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Hola bienvenid@ a mi Portafolio Profesional, soy Elian Gonzalez, Desarrollador Web"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      rel="cononical"
+      href="https://elian-gonzalez2000.github.io/portfolio-elian/"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://i.ibb.co/1mWw1nT/hero-image-home.jpg"
+    />
+    <meta name="theme-color" content="#1450d2" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      name="twitter:title"
+      content="Portafolio CV - Elian Gonzalez"
+    />
+    <meta
+      property="og:image"
+      name="twitter:image"
+      content="https://i.ibb.co/1mWw1nT/hero-image-home.jpg"
+    />
+    <meta
+      property="og:url"
+      name="twitter:url"
+      content="https://elian-gonzalez2000.github.io/portfolio-elian/"
+    />
+    <meta
+      property="og:description"
+      name="twitter:description"
+      content="Hola bienvenid@ a mi Portafolio Profesional, soy Elian Gonzalez, Desarrollador Web"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 </style>
