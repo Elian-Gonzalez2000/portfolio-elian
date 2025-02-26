@@ -34,6 +34,7 @@ interface ButtonProps {
   bgHoverColor?: string;
   margin?: string;
   width?: string;
+  dataText?: string;
 }
 
 const {
@@ -51,8 +52,8 @@ const {
   bgHoverColor = "hover:bg-gray-300",
   margin = "mb-3",
   width = "w-4/5",
+  dataText,
 } = Astro.props as ButtonProps;
-console.log(Astro.props);
 ---
 
 <!-- create a buttom component for astro -->
@@ -62,6 +63,7 @@ console.log(Astro.props);
   rel={rel}
   target={target}
   class={`${classes && classes} ${margin} flex justify-center items-center ${width} py-2 ${bgColor} ${textColor} border-2 border-gray-800 rounded-md transition duration-300 ${bgHoverColor} ${textHoverColor}`}
+  data-text={dataText}
   ><slot />
   {` ${text ? text : ""} `}
 </a>
