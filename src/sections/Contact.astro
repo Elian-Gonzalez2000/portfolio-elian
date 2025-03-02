@@ -132,7 +132,7 @@ import SectionTitle from "../components/SectionTitle.astro";
               name="name"
               placeholder="Ingresa tu nombre"
               title="Nombre solo admite letras y espacios en blanco"
-              pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+              pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü \s]+$"
               required
               data-input="contactFormNamePlaceholder"
               data-error="contactFormNameError"
@@ -173,8 +173,8 @@ import SectionTitle from "../components/SectionTitle.astro";
     </aside>
   </div>
   <aside id="gracias" class="modal opacity-0 invisible">
-    <div class="contact-form-loader none">
-      <img src="assets/loader.svg" alt="Enviando..." />
+    <div class="contact-form-loader opacity-0 invisible">
+      <img src="../../public/loader.svg" alt="Enviando..." />
     </div>
     <div class="modal-content opacity-0 invisible">
       <article class="contact-form-response">
@@ -345,6 +345,7 @@ import SectionTitle from "../components/SectionTitle.astro";
     align-items: center;
     width: 90vw;
     height: 50vh;
+
     color: var(--text-light-color);
     background-color: var(--first-alpha-color);
     transition: 0.7s all ease;
@@ -359,6 +360,8 @@ import SectionTitle from "../components/SectionTitle.astro";
   .contact .modal .modal-content svg {
     width: 3.5rem;
     height: 3.5rem;
+    margin-left: auto;
+    margin-right: auto;
     color: var(--gray-light-color);
   }
 
@@ -483,9 +486,9 @@ import SectionTitle from "../components/SectionTitle.astro";
       }
 
       showElement($gracias);
-      showElement($formLoader, false);
+      showElement($formLoader, true);
 
-      console.log($gracias, $errorResponse, $formResponse, $formLoader);
+      // console.log($gracias, $errorResponse, $formResponse, $formLoader);
       fetch("https://formsubmit.co/ajax/eliancarlogm@gmail.com", {
         method: "POST",
         body: new FormData(form),
