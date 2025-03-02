@@ -89,8 +89,8 @@
       "contactFormNameError": "Name only allows letters and blank spaces",
       "contactFormEmailError": "The email entered is not valid",
       "contactFormTextareaError": "Do not exceed 255 characters",
-      "contactModalSuccess": "Thanks So Much! <br /><br /> For Contacting Me",
-      "contactModalError": "¡Ocurrio un Error! <br /> <br /> Intentelo Nuevamente",
+      "contactModalSuccess": "Thanks So Much! For Contacting Me",
+      "contactModalError": "¡Ocurrio un Error! Intentelo Nuevamente",
       "footerText": "&copy; ecgonzalez | Thank you for your interest!"
     },
     "spanish": {
@@ -140,8 +140,8 @@
       "contactFormNameError": "Nombre solo admite letras y espacios en blanco",
       "contactFormEmailError": "El correo introducido no es valido",
       "contactFormTextareaError": "No se exceda de los 255 caracteres",
-      "contactModalSuccess": "¡Muchas Gracias! <br /><br /> Por Contactarme",
-      "contactModalError": "¡Ocurrio un Error! <br /> <br /> Intentelo Nuevamente",
+      "contactModalSuccess": "¡Muchas Gracias! Por Contactarme",
+      "contactModalError": "¡Ocurrio un Error! Intentelo Nuevamente",
       "footerText": "&copy; ecgonzalez | ¡Gracias por tu interes!"
     }
   }
