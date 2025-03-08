@@ -1,182 +1,328 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header.astro';
-import Home from '../sections/Home.astro';
-import About from '../sections/About.astro';
-import Service from '../sections/Services.astro';
-import Projects from '../sections/Projects.astro';
-import Contact from '../sections/Contact.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
+import Home from "../sections/Home.astro";
+import About from "../sections/About.astro";
+import Service from "../sections/Services.astro";
+import Projects from "../sections/Projects.astro";
+import Contact from "../sections/Contact.astro";
+import Footer from "../components/Footer.astro";
 
-const data = await import('../data.json');
+const data = await import("../data.json");
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<Header />
+<Layout title="Elian Gonzalez/Fullstack Developer">
+  <main>
+    <Header />
     <Home />
     <About />
-    <Projects  projects={data.default.projects}/>
+    <Projects projects={data.default.projects} />
     <Service />
     <Contact />
     <Footer />
-	</main>
+  </main>
 </Layout>
 
 <style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+  /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+  html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+  }
+  main {
+    display: block;
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+  }
+  pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+  a {
+    background-color: transparent;
+  }
+  abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+  }
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  img {
+    border-style: none;
+  }
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+  button,
+  input {
+    overflow: visible;
+  }
+  button,
+  select {
+    text-transform: none;
+  }
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  button {
+    -webkit-appearance: button;
+  }
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner,
+  button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring,
+  button:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+  legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  textarea {
+    overflow: auto;
+  }
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+  }
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+  }
+  details {
+    display: block;
+  }
+  summary {
+    display: list-item;
+  }
+  template {
+    display: none;
+  }
+  [hidden] {
+    display: none;
+  }
 
-/* ----- Customs Properties ----- */
+  /* ----- Customs Properties ----- */
 
-:root {
-  --first-color: #1450d2;
-  --first-alpha-color: rgba(20, 80, 210, 0.75);
-  --second-color: #0096c8;
-  --second-alpha-color: rgba(0, 150, 200, 0.75);
-  --third-color: #e8d5b5;
-  --third-alpha-color: rgba(232, 213, 181, 0.75);
-  --four-color: #00ad7e;
-  --four-alpha-color: rgba(0, 173, 126, 0.75);
-  --five-color: #0078a8;
-  --five-alpha-color: rgba(0, 120, 168, 0.75);
-  --six-color: #aba9bb;
-  --six-alpha-color: rgba(171, 169, 187, 0.75);
-  --white-color: #fff;
-  --gray-light-color: #f3f3f3;
-  --gray-color: #ccc;
-  --gray-dark-color: #666;
-  --black-gray-color: #222;
-  --black-color: #000;
-  --link-color: #f6f6f6;
-  --title-color: #333;
-  --text-dark-color: #222;
-  --text-light-color: #f3f3f3;
-  --white-alpha-color: rgba(255, 255, 255, 0.5);
-  --black-alpha-color: rgba(0, 0, 0, 0.5);
-  --background-light: #f3f3f3;
-  --background-dark: #111111;
-  --font: 'Open Sans', sans-serif;
-  --max-width: 1200px;
-  --header-height: 4rem;
-  --breakpoint-nm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-}
-/* ------ Resets ------ */
-html {
-  box-sizing: border-box;
-  font-family: var(--font);
-  font-size: 16px;
-  scroll-behavior: smooth;
-  background-color: none;
-}
+  :root {
+    --first-color: #1450d2;
+    --first-alpha-color: rgba(20, 80, 210, 0.75);
+    --second-color: #0096c8;
+    --second-alpha-color: rgba(0, 150, 200, 0.75);
+    --third-color: #e8d5b5;
+    --third-alpha-color: rgba(232, 213, 181, 0.75);
+    --four-color: #00ad7e;
+    --four-alpha-color: rgba(0, 173, 126, 0.75);
+    --five-color: #0078a8;
+    --five-alpha-color: rgba(0, 120, 168, 0.75);
+    --six-color: #aba9bb;
+    --six-alpha-color: rgba(171, 169, 187, 0.75);
+    --white-color: #fff;
+    --gray-light-color: #f3f3f3;
+    --gray-color: #ccc;
+    --gray-dark-color: #666;
+    --black-gray-color: #222;
+    --black-color: #000;
+    --link-color: #f6f6f6;
+    --title-color: #333;
+    --text-dark-color: #222;
+    --text-light-color: #f3f3f3;
+    --white-alpha-color: rgba(255, 255, 255, 0.5);
+    --black-alpha-color: rgba(0, 0, 0, 0.5);
+    --background-light: #f3f3f3;
+    --background-dark: #111111;
+    --font: "Open Sans", sans-serif;
+    --max-width: 1200px;
+    --header-height: 4rem;
+    --breakpoint-nm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+  }
+  /* ------ Resets ------ */
+  html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+    background-color: none;
+  }
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-  color: var(--text-dark-color);
-  background-color: var(--background-light);
-}
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-dark-color);
+    background-color: var(--background-light);
+  }
 
-a {
-  color: var(--link-color);
-  transition: all 0.5s ease-out;
-  text-decoration: none;
-}
+  a {
+    color: var(--link-color);
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+  }
 
-a:hover {
-  opacity: 0.9;
-}
+  a:hover {
+    opacity: 0.9;
+  }
 
-h1 {
-  margin: 0;
-  font-size: 2rem;
-}
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
 
-h2 {
-  margin: 0;
-  font-size: 1.5rem;
-}
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
 
-h3 {
-  margin: 0;
-  font-size: 1.25rem;
-}
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
 
-h4 {
-  margin: 0;
-  font-size: 1rem;
-}
+  h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
 
-h5 {
-  margin: 0;
-  font-size: 0.85rem;
-}
+  h5 {
+    margin: 0;
+    font-size: 0.85rem;
+  }
 
-h6 {
-  margin: 0;
-  font-size: 0.7rem;
-}
+  h6 {
+    margin: 0;
+    font-size: 0.7rem;
+  }
 
-img {
-  vertical-align: top;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+  img {
+    vertical-align: top;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 
-p {
-  line-height: 1.6;
-}
+  p {
+    line-height: 1.6;
+  }
 
-ul {
-  list-style: none;
-}
+  ul {
+    list-style: none;
+  }
 
-.nav ul li a.active {
-  opacity: 1;
-  color: var(--text-dark-color);
-  background-color: var(--gray-light-color);
-}
-/* ----- Texto Animado ----- */
-.none {
-  display: none;
-}
+  .nav ul li a.active {
+    opacity: 1;
+    color: var(--text-dark-color);
+    background-color: var(--gray-light-color);
+  }
+  /* ----- Texto Animado ----- */
+  .none {
+    display: none;
+  }
 
-.hero-image-title h1#logo div {
-  position: relative;
-  transition: 0.5s all ease;
-  color: var(--white-color);
-}
+  .hero-image-title h1#logo div {
+    position: relative;
+    transition: 0.5s all ease;
+    color: var(--white-color);
+  }
 
-.hero-image-title h1#logo div span {
-  position: relative;
-  transition: 0.5s all ease;
-}
+  .hero-image-title h1#logo div span {
+    position: relative;
+    transition: 0.5s all ease;
+  }
 
-.hero-image-title h1#logo div span.second-child {
-  position: absolute;
-  top: 2.1rem;
-  left: 0;
-}
+  .hero-image-title h1#logo div span.second-child {
+    position: absolute;
+    top: 2.1rem;
+    left: 0;
+  }
 
-.hero-image-title h1#logo div.animation {
-  transform: translateY(-2.1rem);
-}
+  .hero-image-title h1#logo div.animation {
+    transform: translateY(-2.1rem);
+  }
 
-/* Contact */
-.contact-form-error {
+  /* Contact */
+  .contact-form-error {
     margin-top: -1rem;
     font-size: 80%;
     background-color: var(--form-error-color);
@@ -191,108 +337,106 @@ ul {
 
   .contact-form-error.is-active {
     display: block;
-    animation: show-message .3s 1 normal 0s ease-out both;
+    animation: show-message 0.3s 1 normal 0s ease-out both;
   }
 
-@media screen and (min-width: 1024px) {
-.hero-image-title h1#logo div span.second-child {
-  position: absolute;
-  top: 3rem;
-  left: 0;
-}
+  @media screen and (min-width: 1024px) {
+    .hero-image-title h1#logo div span.second-child {
+      position: absolute;
+      top: 3rem;
+      left: 0;
+    }
 
-.hero-image-title h1#logo div.animation {
-  transform: translateY(-3rem);
-}
-}
-
+    .hero-image-title h1#logo div.animation {
+      transform: translateY(-3rem);
+    }
+  }
 </style>
 
 <script>
-
   /* Scroll Spy para los enlaces del menu, colocar data-scroll-spy en los enlaces y secciones que se quieran vincular*/
 
-function scrollSpy() {
-  const $section = document.querySelectorAll("section[data-scroll-spy]");
-  const cb = (entries) => {
-    // console.log("entries", entries);
+  function scrollSpy() {
+    const $section = document.querySelectorAll("section[data-scroll-spy]");
+    const cb = (entries) => {
+      // console.log("entries", entries);
 
-    entries.forEach((entry) => {
-      //console.log("entry", entry);
-      const id = entry.target.getAttribute("id");
-      // console.log(id);
+      entries.forEach((entry) => {
+        //console.log("entry", entry);
+        const id = entry.target.getAttribute("id");
+        // console.log(id);
 
-      if (entry.isIntersecting) {        
-        document.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add(
-          "active"
-        );
-      } else {
-        document.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.remove(
-          "active"
-        );
+        if (entry.isIntersecting) {
+          document
+            .querySelector(`a[data-scroll-spy][href="#${id}"]`)
+            .classList.add("active");
+        } else {
+          document
+            .querySelector(`a[data-scroll-spy][href="#${id}"]`)
+            .classList.remove("active");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(cb, {
+      //root
+      //rootMargin
+      threshold: [0.5, 0.75],
+    });
+
+    $section.forEach((el) => observer.observe(el));
+  }
+
+  async function translationTexts() {
+    const language = localStorage.getItem("language") || "spanish";
+    const data = await import("../data.json");
+    const projectsTranslations = data.default.projects;
+    const translationsEN = data.default.translations.english;
+    const translationsES = data.default.translations.spanish;
+
+    const $texts = document.querySelectorAll("[data-text]");
+    const $projects = document.querySelectorAll("[data-project-description]");
+    const $inputs = document.querySelectorAll("[data-input]");
+    $texts.forEach((el: HTMLElement) => {
+      const text = el.dataset.text;
+      if (language === "spanish") {
+        el.textContent = translationsES[text];
+        el.title ? (el.title = translationsES[text]) : "";
+      }
+
+      if (language === "english") {
+        el.textContent = translationsEN[text];
       }
     });
-  };
 
-  const observer = new IntersectionObserver(cb, {
-    //root
-    //rootMargin
-    threshold: [0.5,0.75],
-  });
+    $projects.forEach((el: HTMLElement, i) => {
+      if (language === "spanish") {
+        el.textContent = projectsTranslations[i].descriptionES;
+      }
 
-  $section.forEach((el) => observer.observe(el));
-}
+      if (language === "english") {
+        el.textContent = projectsTranslations[i].descriptionEN;
+      }
+    });
 
-async function translationTexts (){
-  const language = localStorage.getItem("language") || "spanish";
-  const data = await import('../data.json');
-  const projectsTranslations = data.default.projects;
-  const translationsEN = data.default.translations.english;
-  const translationsES = data.default.translations.spanish;
+    $inputs.forEach((el: HTMLInputElement) => {
+      const text = el.dataset.input;
+      const inputError = el.dataset.error;
 
-  const $texts = document.querySelectorAll("[data-text]");
-  const $projects = document.querySelectorAll("[data-project-description]");
-  const $inputs = document.querySelectorAll("[data-input]");
-  $texts.forEach((el: HTMLElement)=>{
-    const text = el.dataset.text;
-    if(language === "spanish"){
-      el.textContent = translationsES[text];
-      el.title ? el.title = translationsES[text] : "";
-    }
-    
-    if(language === "english"){
-      el.textContent = translationsEN[text];
-    }
-  });
+      if (language === "spanish") {
+        el.placeholder = translationsES[text];
+        if (inputError) el.title = translationsES[inputError];
+        if (el.type === "submit") el.value = translationsES[text];
+      }
 
-  $projects.forEach((el: HTMLElement, i)=>{    
-    if(language === "spanish"){
-      el.textContent = projectsTranslations[i].descriptionES;
-    }
-    
-    if(language === "english"){
-      el.textContent = projectsTranslations[i].descriptionEN;
-    }
-  });
+      if (language === "english") {
+        el.placeholder = translationsEN[text];
+        if (inputError) el.title = translationsEN[inputError];
+        if (el.type === "submit") el.value = translationsEN[text];
+      }
+    });
+  }
 
-  $inputs.forEach((el: HTMLInputElement)=>{
-    const text = el.dataset.input;
-    const inputError = el.dataset.error;
-    
-    if(language === "spanish"){
-      el.placeholder = translationsES[text];
-      if(inputError) el.title = translationsES[inputError];
-      if(el.type === "submit") el.value = translationsES[text];
-    }
-    
-    if(language === "english"){
-      el.placeholder = translationsEN[text];
-      if(inputError) el.title = translationsEN[inputError];
-      if(el.type === "submit") el.value = translationsEN[text];
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", scrollSpy);
-document.addEventListener("DOMContentLoaded", translationTexts);
+  document.addEventListener("DOMContentLoaded", scrollSpy);
+  document.addEventListener("DOMContentLoaded", translationTexts);
 </script>
